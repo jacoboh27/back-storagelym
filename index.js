@@ -4,6 +4,10 @@ import path from 'path'
 import mongoose from 'mongoose'
 import router from './router'
 
+require("dotenv").config();
+
+const port = process.env.PORT;
+
 const key = require('./config/db');
 
 //database connection
@@ -30,7 +34,7 @@ app.use(express.urlencoded(
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/api/', router);
 
-app.set('port', process.env.PORT || 8080);
+app.set('port', port || 8080);
 app.listen(app.get('port'), () => {
-    console.log("El servidor se ejecuto correctamente");
+    console.log("El servidor se ejecuto correctamente en el puerto ", port);
 });
