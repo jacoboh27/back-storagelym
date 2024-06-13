@@ -81,13 +81,13 @@ export default {
     },
     list_active: async(req,res) => {
         try {
-            let Servicios = await Servicio.find({state:1});
+            let ServiciosList = await Servicio.find({state:1});
 
-            Servicios = Servicios.map((obj) => {
-                return Servicios.categorie_list_active(obj);
+            ServiciosList = ServiciosList.map((obj) => {
+                return Servicios.servicio_list_active(obj);
             })
             res.status(200).json({
-                listServicios: Servicios
+                listServicios: ServiciosList
             });
         } catch (error) {
             res.status(500).send({
