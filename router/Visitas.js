@@ -6,7 +6,7 @@ const router = routerx();
 
 router.post("/register", VisitasController.register);
 router.get("/list", VisitasController.list);
-router.put("/update", VisitasController.update);
+// router.put("/update", VisitasController.update);
 router.delete("/delete", VisitasController.remove);
 
 export default router;

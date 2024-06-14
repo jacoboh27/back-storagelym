@@ -47,12 +47,14 @@ export default {
                     const USER_FRONTEND = {
                         token: tokenUser,
                         user: {
+                            id: user._id,
                             name: user.name,
                             surname: user.surname,
                             document: user.document,
                             email: user.email,
                             rol: user.rol,
-                            avatar: user.avatar
+                            address: user.address,
+                            phone: user.phone,
                         }
                     }
                     res.status(200).json({USER_FRONTEND: USER_FRONTEND});

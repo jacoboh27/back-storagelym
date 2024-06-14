@@ -1,15 +1,15 @@
 import mongoose,{Schema} from "mongoose"
 
 const UserSchema = new Schema({
-    rol:{type: String, maxlength:30, required:true},
-    name:{type: String, maxlength:250, required:true},
-    surname:{type: String, maxlength:250, required:false},
-    email:{type: String, maxlength:250, required:true, unique:true},
-    password:{type: String, maxlength:250, required:true},
-    avatar:{type: String, maxlength:250, required:false},
-    state:{type: Number, maxlength:1, default:1},
-    phone:{type: String, maxlength:20, required:false},
-    birthday:{type: String, maxlength:250, required:false}
+    identityCard: { type: String, required: true, trim: true },
+    rol:{ type: String, maxlength:30, required:true },
+    name:{ type: String, maxlength:100, required:true, trim: true },
+    surname: { type: String, maxlength:100, required:false, trim: true },
+    email: {type: String, maxlength:60, required:true, unique:true, trim: true },
+    password: {type: String, maxlength:100, required:true },
+    state: { type: Number, maxlength:1, default:1 },
+    phone: { type: String, maxlength:15, required:false, trim: true },
+    address: { type: String, maxlength:100, required:false, trim: true }
 }, {
     timestamps: true
 });
